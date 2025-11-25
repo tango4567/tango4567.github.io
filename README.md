@@ -50,7 +50,7 @@
 
         nav {
             display: flex;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
@@ -82,28 +82,28 @@
 
         .hero-header {
             background: linear-gradient(to right, #ffd966, #e67e22);
-            padding: 40px;
+            padding: 40px 20px;
             text-align: center;
         }
 
         .hero-header h2 {
-            font-size: 3em;
+            font-size: 2.5em;
             color: white;
             margin-bottom: 10px;
         }
 
         .hero-header p {
-            font-size: 1.5em;
+            font-size: 1.3em;
             color: white;
         }
 
         .hero-content {
-            padding: 40px;
+            padding: 40px 20px;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
@@ -180,7 +180,7 @@
             background: white;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            padding: 50px;
+            padding: 50px 30px;
         }
 
         .about-card h2 {
@@ -199,13 +199,13 @@
 
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
 
         .feature-box {
-            padding: 30px;
+            padding: 30px 20px;
             border-radius: 15px;
             text-align: center;
         }
@@ -233,6 +233,103 @@
             color: #c0392b;
         }
 
+        /* Gallery Section */
+        .gallery {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .gallery h2 {
+            color: #e67e22;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .photo-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            padding: 15px;
+            text-align: center;
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        /* Video Section */
+        .videos {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .videos h2 {
+            color: #e67e22;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .video-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-title {
+            padding: 15px;
+            text-align: center;
+            color: #c0392b;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
         /* Services Section */
         .services {
             max-width: 1200px;
@@ -249,16 +346,17 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
 
         .service-card {
             background: white;
-            padding: 35px;
+            padding: 35px 20px;
             border-radius: 15px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
             transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
         }
 
         .service-card:hover {
@@ -293,7 +391,7 @@
             background: white;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            padding: 50px;
+            padding: 50px 30px;
         }
 
         .contact-card h2 {
@@ -311,8 +409,9 @@
 
         .contact-item {
             display: flex;
-            align-items: center;
-            gap: 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
             padding: 25px;
             border-radius: 15px;
         }
@@ -329,8 +428,16 @@
             background: #fff4e6;
         }
 
+        .contact-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+        }
+
         .contact-icon {
             font-size: 2.5em;
+            flex-shrink: 0;
         }
 
         .contact-details h3 {
@@ -342,20 +449,25 @@
         .contact-details p {
             font-size: 1.1em;
             color: #555;
+            word-wrap: break-word;
         }
 
         .social-links {
             display: flex;
-            gap: 20px;
-            margin-top: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+            width: 100%;
         }
 
         .social-link {
-            padding: 10px 20px;
+            flex: 1;
+            min-width: 120px;
+            padding: 12px 20px;
             border-radius: 8px;
             text-decoration: none;
             color: white;
             font-weight: bold;
+            text-align: center;
             transition: transform 0.3s;
         }
 
@@ -377,7 +489,7 @@
 
         .booking-box {
             background: linear-gradient(to right, #ffe6cc, #ffcccc);
-            padding: 30px;
+            padding: 30px 20px;
             border-radius: 15px;
             text-align: center;
             margin-top: 30px;
@@ -418,27 +530,110 @@
             .header-content {
                 flex-direction: column;
                 text-align: center;
+                gap: 15px;
             }
 
             .header-title h1 {
                 font-size: 1.8em;
             }
 
+            .header-title p {
+                font-size: 1em;
+            }
+
             nav {
-                margin-top: 15px;
+                margin-top: 10px;
                 justify-content: center;
+                gap: 10px;
+            }
+
+            nav a {
+                font-size: 1em;
+                padding: 5px 8px;
             }
 
             .hero-header h2 {
                 font-size: 2em;
             }
 
+            .hero-header p {
+                font-size: 1.1em;
+            }
+
             .hero-content {
-                padding: 20px;
+                padding: 20px 15px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
             }
 
             .about-card, .contact-card {
                 padding: 30px 20px;
+            }
+
+            .about-card h2, .services h2, .gallery h2, .videos h2, .contact-card h2 {
+                font-size: 2em;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-item {
+                padding: 20px 15px;
+            }
+
+            .contact-icon {
+                font-size: 2em;
+            }
+
+            .contact-details h3 {
+                font-size: 1.3em;
+            }
+
+            .contact-details p {
+                font-size: 1em;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .social-link {
+                width: 100%;
+                min-width: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-title h1 {
+                font-size: 1.5em;
+            }
+
+            .hero-header h2 {
+                font-size: 1.5em;
+            }
+
+            .about-card h2, .services h2, .gallery h2, .videos h2, .contact-card h2 {
+                font-size: 1.8em;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -454,6 +649,8 @@
             <nav>
                 <a href="#home">होम</a>
                 <a href="#about">परिचय</a>
+                <a href="#gallery">गैलरी</a>
+                <a href="#videos">वीडियो</a>
                 <a href="#services">सेवाएं</a>
                 <a href="#contact">संपर्क</a>
             </nav>
@@ -528,6 +725,62 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>📸 फोटो गैलरी</h2>
+        <div class="photo-grid">
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/400x300/FF6B35/FFFFFF?text=Katha+Event+1" alt="कथा आयोजन 1">
+                <div class="photo-caption">कथा आयोजन</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/400x300/F7931E/FFFFFF?text=Katha+Event+2" alt="कथा आयोजन 2">
+                <div class="photo-caption">भागवत कथा</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/400x300/C1272D/FFFFFF?text=Katha+Event+3" alt="कथा आयोजन 3">
+                <div class="photo-caption">श्रीराम कथा</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/400x300/FF6B35/FFFFFF?text=Katha+Event+4" alt="कथा आयोजन 4">
+                <div class="photo-caption">देवी भागवत</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/400x300/F7931E/FFFFFF?text=Katha+Event+5" alt="कथा आयोजन 5">
+                <div class="photo-caption">शिव पुराण</div>
+            </div>
+            <div class="photo-item">
+                <img src="https://via.placeholder.com/400x300/C1272D/FFFFFF?text=Katha+Event+6" alt="कथा आयोजन 6">
+                <div class="photo-caption">नर्मदा पुराण</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="videos">
+        <h2>🎥 यूट्यूब वीडियो</h2>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+                <div class="video-title">भागवत कथा - भाग 1</div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+                <div class="video-title">श्रीराम कथा - विशेष प्रवचन</div>
+            </div>
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+                </div>
+                <div class="video-title">देवी भागवत पुराण</div>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section id="services" class="services">
         <h2>हमारी सेवाएं</h2>
@@ -561,31 +814,37 @@
             <h2>संपर्क करें</h2>
             <div class="contact-info">
                 <div class="contact-item phone">
-                    <div class="contact-icon">📱</div>
-                    <div class="contact-details">
-                        <h3>मोबाइल नंबर</h3>
-                        <p>7000574916, 9329843665</p>
+                    <div class="contact-header">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h3>मोबाइल नंबर</h3>
+                            <p>7000574916, 9329843665</p>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="contact-item location">
-                    <div class="contact-icon">📍</div>
-                    <div class="contact-details">
-                        <h3>पता</h3>
-                        <p>जबलपुर, मध्य प्रदेश<br>
-                        श्रीधाम वृन्दावन, उत्तर प्रदेश</p>
+                    <div class="contact-header">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>पता</h3>
+                            <p>जबलपुर, मध्य प्रदेश<br>
+                            श्रीधाम वृन्दावन, उत्तर प्रदेश</p>
+                        </div>
                     </div>
                 </div>
 
                 <div class="contact-item social">
-                    <div class="contact-icon">📲</div>
-                    <div class="contact-details">
-                        <h3>सोशल मीडिया</h3>
-                        <div class="social-links">
-                            <a href="#" class="social-link youtube">YouTube</a>
-                            <a href="#" class="social-link facebook">Facebook</a>
-                            <a href="#" class="social-link instagram">Instagram</a>
+                    <div class="contact-header">
+                        <div class="contact-icon">📲</div>
+                        <div class="contact-details">
+                            <h3>सोशल मीडिया</h3>
                         </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@KishoriSakshiDidiJabalpur" target="_blank" class="social-link youtube">YouTube</a>
+                        <a href="https://www.facebook.com/KishoriSakshiDidi" target="_blank" class="social-link facebook">Facebook</a>
+                        <a href="https://www.instagram.com/kishorisakshididi" target="_blank" class="social-link instagram">Instagram</a>
                     </div>
                 </div>
             </div>
